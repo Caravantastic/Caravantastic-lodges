@@ -34,5 +34,10 @@ document.getElementById('checkin').textContent=d.checkin||'—';document.getElem
 document.getElementById('guests').textContent=d.guests?d.guests+' guest'+(Number(d.guests)===1?'':'s'):'—';
 document.getElementById('nights').textContent=d.nights?d.nights+' night'+(Number(d.nights)===1?'':'s'):'—';
 document.getElementById('name').textContent=d.name||'—';document.getElementById('email').textContent=d.email||'—';document.getElementById('phone').textContent=d.phone||'—';document.getElementById('special').textContent=d.special||'None';
-document.getElementById('rate-label').textContent='Accommodation ('+money(d.price)+' / night)';document.getElementById('rate').textContent=money(Number(d.price||0)*Number(d.nights||0));document.getElementById('night-count').textContent=d.nights||'—';document.getElementById('total').textContent=money(d.total);
+const calculatedTotal=Number(d.price||0)*Number(d.nights||0);
+document.getElementById('rate-label').textContent='Accommodation ('+money(d.price)+' / night)';
+document.getElementById('rate').textContent=money(calculatedTotal);
+document.getElementById('night-count').textContent=d.nights||'—';
+document.getElementById('total').textContent=money(calculatedTotal);
+if(calculatedTotal>0){d.total=calculatedTotal;save(d)}
 </script></body></html>
