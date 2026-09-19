@@ -8,19 +8,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="checkout-page">
-  <header class="checkout-header">
-    <div class="wrap checkout-nav">
-      <a class="checkout-brand" href="index.html" aria-label="Caravantastic Lodges home"><span class="checkout-brand-mark">C</span><span>Caravantastic<small>LODGES</small></span></a>
-      <div class="checkout-step"><span>BOOKING CHECKOUT</span><strong>Step 5 <i>of</i> 5</strong></div>
+  <header class="checkout-header checkout-header-clean">
+    <div class="wrap checkout-nav checkout-nav-clean">
+      <a class="checkout-logo" href="index.html" aria-label="Caravantastic Lodges home"><img src="logo.jpeg" alt="Caravantastic Lodges logo"></a>
     </div>
   </header>
-
   <main class="checkout-main">
     <div class="wrap">
-      <div class="checkout-progress" aria-label="Booking progress"><span></span><span></span><span></span><span></span><span class="active"></span></div>
-      <div class="checkout-heading">
-        <div><div class="checkout-kicker">FINAL STEP · PAYMENT</div><h1>Complete your booking</h1><p>Choose how you’d like to pay for your stay.</p></div>
-        <div class="checkout-trust"><span aria-hidden="true">✓</span> Booking request summary</div>
+      <div class="checkout-heading checkout-heading-clean">
+        <div><h1>Payment Checkout</h1><p>Choose your preferred payment method to secure your booking.</p></div>
       </div>
 
       <div class="checkout-layout">
@@ -28,12 +24,11 @@
           <div class="checkout-panel-title"><div><span class="checkout-number">01</span><h2 id="payment-title">Select a payment method</h2></div><span class="checkout-required">Required</span></div>
           <p class="checkout-help">Choose an option below to continue. Card payments are not currently available.</p>
 
-          <div class="checkout-method checkout-card-method">
+          <a class="checkout-method checkout-card-method checkout-method-link" href="card-unavailable.html" aria-label="Credit or debit card payment information">
             <div class="method-icon card-icon" aria-hidden="true">▰</div>
-            <div class="method-copy"><div class="method-heading"><h3>Credit or debit card</h3><span class="method-tag unavailable">Temporarily unavailable</span></div><p>Visa, Mastercard and other major cards</p></div>
-            <button type="button" class="method-action method-outline" onclick="showCardNotice()">Select <span aria-hidden="true">→</span></button>
-            <div id="cardNotice" class="card-unavailable-message" hidden role="status"><strong>Card payments are temporarily unavailable</strong><p>Sorry for the inconvenience. Please choose one of the other payment methods below to complete your booking request.</p><p>For bank transfer details, email <a href="mailto:Caravantasticsouthwest1@gmail.com">Caravantasticsouthwest1@gmail.com</a>.</p><button type="button" class="dismiss-notice" onclick="hideCardNotice()">Got it</button></div>
-          </div>
+            <div class="method-copy"><div class="method-heading"><h3>Credit or debit card</h3></div><p>Visa, Mastercard and other major cards</p></div>
+            <span class="method-chevron" aria-hidden="true">›</span>
+          </a>
 
           <div class="checkout-method">
             <div class="method-icon email-icon" aria-hidden="true">✉</div>
@@ -83,8 +78,6 @@
     document.getElementById('guests').textContent=d.guests||'—';
     document.getElementById('nights').textContent=(d.nights||'—')+' '+(Number(d.nights)===1?'night':'nights');
     document.getElementById('t').textContent=money(d.total);
-    function showCardNotice(){document.getElementById('cardNotice').hidden=false}
-    function hideCardNotice(){document.getElementById('cardNotice').hidden=true}
     function bank(){wa('Hello Caravantastic, I would like to complete payment for my booking request. Cabin: '+d.property+' | Dates: '+d.checkin+' to '+d.checkout+' | Guests: '+d.guests+' | Total: '+money(d.total)+'. Please send the bank transfer details.')}
     function emailBank(){const subject='Bank transfer details for booking request';const body='Hello Caravantastic, I would like to complete payment for my booking request.\nCabin: '+d.property+'\nDates: '+d.checkin+' to '+d.checkout+'\nGuests: '+d.guests+'\nTotal: '+money(d.total)+'\n\nPlease send the bank transfer details.';location.href='mailto:Caravantasticsouthwest1@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)}
     async function copyW(){try{await navigator.clipboard.writeText(document.getElementById('w').textContent);document.getElementById('c').textContent='Wallet address copied.'}catch(e){document.getElementById('c').textContent='Press and hold the wallet address to copy it.'}}
