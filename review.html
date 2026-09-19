@@ -1,1 +1,38 @@
-<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Caravantastic | Review</title><link rel="stylesheet" href="style.css"></head><body><header><div class="wrap nav"><a class="brand-text" href="index.html">Caravantastic</a><span class="step">Step 4 of 5</span></div></header><main><div class="wrap"><div class="eyebrow">Review</div><h1>Review your request</h1><p class="sub">Check everything before choosing a payment method.</p><div class="panel"><h2 id="p"></h2><div class="summary"><div><strong>Location</strong><span id="l"></span></div><div><strong>Guests</strong><span id="g"></span></div><div><strong>Check-in</strong><span id="i"></span></div><div><strong>Check-out</strong><span id="o"></span></div><div><strong>Check-in time</strong><span>1:00 PM</span></div><div><strong>Check-out time</strong><span>11:00 AM</span></div><div><strong>Guest name</strong><span id="n"></span></div><div><strong>Email</strong><span id="e"></span></div><div><strong>Phone</strong><span id="ph"></span></div><div><strong>Special requests</strong><span id="s"></span></div></div><div class="total" id="t"></div></div><div class="actions"><a class="btn secondary" href="details.html">Back</a><a class="btn right" href="payment.html">Continue to payment</a></div></div></main><footer>Caravantastic</footer><script src="common.js"></script><script>const d=cabin();p.textContent=d.property;l.textContent=d.location;g.textContent=d.guests;i.textContent=d.checkin;o.textContent=d.checkout;n.textContent=d.name;e.textContent=d.email;ph.textContent=d.phone;s.textContent=d.special||'None';t.textContent=money(d.total)+' · '+d.nights+' night'+(d.nights==1?'':'s')</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review Your Booking | Caravantastic Lodges</title>
+<link rel="stylesheet" href="style.css?v=booking-review-flow">
+<style>
+.review-page{background:#f7f8f6;color:#173b31}.review-page .review-wrap{max-width:900px;margin:0 auto;padding:0 20px}.review-header{background:#fff;border-bottom:1px solid #e6e9e5}.review-header .review-wrap{min-height:66px;display:flex;align-items:center}.review-brand{font-weight:800;font-size:18px;letter-spacing:.04em;color:#173b31}.review-main{padding:36px 0 56px}.review-kicker{font-size:11px;letter-spacing:.16em;font-weight:700;color:#708077;text-transform:uppercase}.review-title{font:700 clamp(30px,5vw,42px) 'DM Sans',sans-serif;letter-spacing:-.035em;color:#142f29;margin:8px 0}.review-intro{color:#66766e;line-height:1.6;margin:0 0 24px}.review-card{background:#fff;border:1px solid #e1e8e2;border-radius:18px;padding:clamp(20px,4vw,32px);box-shadow:0 10px 30px rgba(23,59,49,.045)}.review-card h2{font:700 22px 'DM Sans',sans-serif;margin:0 0 20px}.review-property{background:#f2f6f3;border-radius:12px;padding:16px;margin-bottom:18px}.review-property strong{display:block;font-size:18px}.review-property span{display:block;color:#687970;margin-top:5px;font-size:14px}.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}.review-item{padding:13px 0;border-bottom:1px solid #edf0ed;min-width:0}.review-item span{display:block;color:#7a877f;font-size:12px;margin-bottom:5px}.review-item strong{display:block;font-size:14px;overflow-wrap:anywhere}.review-price{margin-top:22px;padding:18px;background:#edf5f0;border-radius:12px}.review-price-row{display:flex;justify-content:space-between;gap:15px;color:#5f7167;font-size:14px;padding:5px 0}.review-price-total{border-top:1px solid #d7e5db;margin-top:10px;padding-top:14px;display:flex;justify-content:space-between;gap:15px;font-size:17px;font-weight:700;color:#174c3d}.review-note{font-size:12px;color:#687970;line-height:1.6;margin:15px 0 0}.review-actions{display:flex;gap:12px;align-items:center;margin-top:22px}.review-actions .btn{min-height:48px;align-items:center}.review-actions .continue{margin-left:auto}.review-footer{text-align:center;color:#718078;font-size:12px;padding:20px}
+@media(max-width:600px){.review-main{padding:25px 0 40px}.review-page .review-wrap{padding-left:15px;padding-right:15px}.review-grid{grid-template-columns:1fr}.review-actions{flex-direction:column-reverse;align-items:stretch}.review-actions .continue{margin-left:0}.review-actions .btn{width:100%;text-align:center}}
+</style>
+</head>
+<body class="review-page">
+<header class="review-header"><div class="review-wrap"><a class="review-brand" href="index.html">CARAVANTASTIC LODGES</a></div></header>
+<main class="review-main"><div class="review-wrap">
+<div class="review-kicker">Booking review</div><h1 class="review-title">Review your booking</h1><p class="review-intro">Please check your cabin, dates, guest details and total before moving to payment.</p>
+<section class="review-card" aria-labelledby="booking-summary-title">
+<h2 id="booking-summary-title">Your booking summary</h2>
+<div class="review-property"><strong id="property">Your lodge</strong><span id="location">—</span></div>
+<div class="review-grid">
+<div class="review-item"><span>Check-in</span><strong id="checkin">—</strong></div><div class="review-item"><span>Check-out</span><strong id="checkout">—</strong></div>
+<div class="review-item"><span>Guests</span><strong id="guests">—</strong></div><div class="review-item"><span>Length of stay</span><strong id="nights">—</strong></div>
+<div class="review-item"><span>Lead guest</span><strong id="name">—</strong></div><div class="review-item"><span>Email</span><strong id="email">—</strong></div>
+<div class="review-item"><span>Phone</span><strong id="phone">—</strong></div><div class="review-item"><span>Special requests</span><strong id="special">None</strong></div>
+</div>
+<div class="review-price"><div class="review-price-row"><span id="rate-label">Accommodation</span><strong id="rate">—</strong></div><div class="review-price-row"><span>Number of nights</span><strong id="night-count">—</strong></div><div class="review-price-total"><span>Booking request total</span><strong id="total">—</strong></div></div>
+<p class="review-note">This is a booking request, not a confirmed reservation. Your dates will be reserved once payment has been made and confirmed.</p>
+</section>
+<div class="review-actions"><a class="btn secondary" href="details.html">← Go back</a><a class="btn continue" href="payment.html">Proceed to payment →</a></div>
+</div></main><footer class="review-footer">Caravantastic Lodges · Questions? <a href="mailto:Caravantasticsouthwest1@gmail.com">Contact us</a></footer>
+<script src="common.js"></script><script>
+const d=cabin();
+document.getElementById('property').textContent=d.property||'Your lodge';document.getElementById('location').textContent=d.location||'';
+document.getElementById('checkin').textContent=d.checkin||'—';document.getElementById('checkout').textContent=d.checkout||'—';
+document.getElementById('guests').textContent=d.guests?d.guests+' guest'+(Number(d.guests)===1?'':'s'):'—';
+document.getElementById('nights').textContent=d.nights?d.nights+' night'+(Number(d.nights)===1?'':'s'):'—';
+document.getElementById('name').textContent=d.name||'—';document.getElementById('email').textContent=d.email||'—';document.getElementById('phone').textContent=d.phone||'—';document.getElementById('special').textContent=d.special||'None';
+document.getElementById('rate-label').textContent='Accommodation ('+money(d.price)+' / night)';document.getElementById('rate').textContent=money(Number(d.price||0)*Number(d.nights||0));document.getElementById('night-count').textContent=d.nights||'—';document.getElementById('total').textContent=money(d.total);
+</script></body></html>
