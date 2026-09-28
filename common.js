@@ -1,4 +1,4 @@
-const WA='447463201368';
+const WA='447828579250';
 function data(){try{return JSON.parse(sessionStorage.getItem('caravantasticBooking')||'{}')}catch(e){return {}}}
 function save(d){sessionStorage.setItem('caravantasticBooking',JSON.stringify(d))}
 function money(n){return '£'+Number(n||0).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2})}
@@ -6,7 +6,7 @@ function wa(m){location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m)}
 function canonicalRate(property){
   // Match cabin names despite curly/straight apostrophes, spacing, or punctuation.
   const key=String(property||'').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]/g,'');
-  const rates={bredonviewglamping:190,beechwoodnook:170,therooksnook:160,rooksnook:160,elysiansuite:299};
+  const rates={bredonviewglamping:190,beechwoodnook:170,therooksnook:160,rooksnook:160};
   return Object.prototype.hasOwnProperty.call(rates,key)?rates[key]:null;
 }
 function nightsBetween(checkin,checkout){
